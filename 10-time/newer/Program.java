@@ -70,6 +70,7 @@ public class Program {
 
     // quebra de linha:
     System.out.println();
+
     // operações com a data:
     LocalDate pastWeekLocalDate = d01.minusDays(7);
     System.out.println("Past Week Local: " + pastWeekLocalDate);
@@ -87,7 +88,8 @@ public class Program {
     LocalDateTime d21 = LocalDateTime.now();
     Duration t1 = Duration.between(d20, d21);
     System.out.println("Duration of days from 10/08/2025 to now: " + t1.toDays());
-    // usando 'ChronoUnit':
+
+	// contemgem de tempo usando 'ChronoUnit':
     long daysBetween = ChronoUnit.HOURS.between(d21, nextWeeksSeven.atTime(0, 0));
     System.out.println("Duration of time from now to more 7 weeks: " + daysBetween + "H");
 
