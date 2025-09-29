@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
+import model.exceptions.DomainException;
+
 public class Reservation {
 
     private Integer roomNumber;
@@ -15,7 +17,15 @@ public class Reservation {
     public Reservation() {
     }
 
-    public Reservation(Integer roomNumber, LocalDate checkIn, LocalDate checkOut) {
+    // inserindo o tratamento de exceção no construtor,
+    // para que a data de checkOut não entre como
+    // data anterior ao checkIn; a assinatura do método
+    // passa a propagar, com o recurso 'throws',
+    // a classe personalizada:
+   public Reservation(Integer roomNumber, LocalDate checkIn, LocalDate checkOut) throws DomainException {
+        if (!checkOut.isAfter(checkIn)) {
+            throw new DomainException("Error in reservation: Check-out date must be after check-in date.");
+        }
         this.roomNumber = roomNumber;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
@@ -37,27 +47,31 @@ public class Reservation {
         return checkOut;
     }
 
+    // usando 'ChronoUnit', em vez de 'Duration',
+    // para poder armazenar as datas como 'long':
     public long duration() {
         return ChronoUnit.DAYS.between(checkIn, checkOut);
     }
 
-    // para tratar a excessão, o método 'updateDates' não
-    // será 'void', mas retornará uma 'String' com a mensagem
-    // de erro ou retornará nulo, caso tudo funcione adequadamente:
-    public String updateDates(LocalDate checkIn, LocalDate checkOut)  {
+    // o método 'updateDates' retorna, na sua assinatura
+    // ao modo 'void' original, sendo agora auxiliado por
+    // 'throw' e pela exceção personalizada
+    // 'model.exceptions.DomainException',
+    // a fim de retornar mensagem de erro, caso necessário;
+    // a assinatura do método, então, passa a propagar,
+    // com o recurso 'throws', a classe personalizada:
+    public void updateDates(LocalDate checkIn, LocalDate checkOut) throws DomainException {
         LocalDate now = LocalDate.now();
         if (checkIn.isBefore(now) || checkOut.isBefore(now)) {
-            return "Error in reservation: Reservation dates for update must be future dates.";
+            // instanciando a exceção personalizada
+            // 'model.exceptions.DomainException':
+            throw new DomainException("Error in reservation: Reservation dates for update must be future dates.");
         }
         if (!checkOut.isAfter(checkIn)) {
-            return "Error in reservation: Check-out date must be after check-in date.";
+            throw new DomainException("Error in reservation: Check-out date must be after check-in date.");
         }
         this.checkIn = checkIn;
         this.checkOut = checkOut;
-        // como o método retorna uma 'String', em vez de uma declaração
-        // 'void', caso tudo funcione bem, faz-se necessária a
-        // declaração de um retorno nulo:
-        return null;
     }
 
     @Override
