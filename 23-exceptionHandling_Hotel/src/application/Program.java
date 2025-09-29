@@ -22,8 +22,8 @@ public class Program {
         System.out.print("Check-out date (DD/MM/YYYY): ");
         LocalDate checkOut = LocalDate.parse(sc.next(), fmt1);
 
-        // very bad solution - usando 'if-else' para tratar erros
-        // dentro do corpo do programa:
+        // bad solution - usando 'if-else' para tratar erros
+        // na classe 'model.entities.Reservation':
         if (!checkOut.isAfter(checkIn)) {
             System.out.println("Error in reservation: Check-out date must be after check-in date.");
         }
@@ -37,16 +37,16 @@ public class Program {
             System.out.print("Check-out date (DD/MM/YYYY): ");
             checkOut = LocalDate.parse(sc.next(), fmt1);
 
-            LocalDate now = LocalDate.now();
-            if (checkIn.isBefore(now) || checkOut.isBefore(now)) {
-                System.out.println("Error in reservation: Reservation dates for update must be future dates.");
-            }
-            else if (!checkOut.isAfter(checkIn)) {
-            System.out.println("Error in reservation: Check-out date must be after check-in date.");
+            // uma variável error é criada para retornar a
+            // 'String' do método 'updateDates' que, caso seja
+            // nula, a reserva é concluída, porque tudo
+            // transcorreu como esperado:
+            String error = reservation.updateDates(checkIn, checkOut);
+            if (error != null) {
+                System.out.println("Error in reservation: " + error);
             }
             else {
-                reservation.updateDates(checkIn, checkOut);
-                System.out.println("Reservation: \n" + reservation);
+            System.out.println("Reservation: \n" + reservation);
             }
         }
         sc.close();
