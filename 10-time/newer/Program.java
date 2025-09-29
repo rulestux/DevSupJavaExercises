@@ -89,7 +89,9 @@ public class Program {
     Duration t1 = Duration.between(d20, d21);
     System.out.println("Duration of days from 10/08/2025 to now: " + t1.toDays());
 
-	// contemgem de tempo usando 'ChronoUnit':
+	// contagem de tempo usando 'ChronoUnit', usando o tipo 'long';
+	// o tipo 'ChronoUnit' possui diversas constantes enumeradas,
+	// feito CENTURES, DAYS, DECADES, ERAS, HALF_DAYS etc. (ver documentação Oracle):
     long daysBetween = ChronoUnit.HOURS.between(d21, nextWeeksSeven.atTime(0, 0));
     System.out.println("Duration of time from now to more 7 weeks: " + daysBetween + "H");
 
