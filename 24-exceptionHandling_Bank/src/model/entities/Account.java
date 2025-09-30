@@ -13,55 +13,63 @@ public class Account {
     }
 
     public Account(Integer number, String holder, Double balance, Double withdrawLimit) {
-       this.number = number;
-       this.holder = holder;
-       this.balance = balance;
-       this.withdrawLimit = withdrawLimit;
+        this.number = number;
+        this.holder = holder;
+        this.balance = balance;
+        this.withdrawLimit = withdrawLimit;
     }
 
     public Integer getNumber() {
-       return number;
+        return number;
     }
 
     public void setNumber(Integer number) {
-       this.number = number;
+        this.number = number;
     }
 
     public String getHolder() {
-       return holder;
+        return holder;
     }
 
     public void setHolder(String holder) {
-       this.holder = holder;
+        this.holder = holder;
     }
 
     public Double getBalance() {
-       return balance;
+        return balance;
     }
 
     public void setBalance(Double balance) {
-       this.balance = balance;
+        this.balance = balance;
     }
 
     public Double getWithdrawLimit() {
-       return withdrawLimit;
+        return withdrawLimit;
     }
 
     public void setWithdrawLimit(Double withdrawLimit) {
-       this.withdrawLimit = withdrawLimit;
+        this.withdrawLimit = withdrawLimit;
     }
 
     public void deposit(Double amount) {
-       balance += amount;
+        balance += amount;
     }
 
+    // refatorando o exercício conforme correção do professor;
+    // tratamento de exceções transferido para o novo método
+    // 'validateWithdraw', que é chamado no corpo do método
+    // 'withdraw' antes de concluir a execução da função:
     public void withdraw(Double amount) throws DomainException {
-       balance -= amount;
-       if (amount > withdrawLimit) {
-          throw new DomainException("The amount exceeds withdraw limit.");
-       }
-       if (balance <= 0.0) {
-          throw new DomainException("Not enough balance.");
-       }
+        validateWithdraw(amount);
+        balance -= amount;
+    }
+
+    private void validateWithdraw(double amount) throws DomainException {
+        if (amount > getWithdrawLimit()) {
+            throw new DomainException("The amount exceeds withdraw limit.");
+        }
+        if (amount > getBalance()) {
+            throw new DomainException("Not enough balance.");
+        }
     }
 }
