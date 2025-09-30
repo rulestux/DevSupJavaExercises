@@ -3,7 +3,7 @@ package application;
 import java.util.Scanner;
 
 import model.entities.Account;
-import model.exception.DomainException;
+import model.exceptions.DomainException;
 
 public class Program {
 
