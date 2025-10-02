@@ -1,7 +1,9 @@
 package model.services;
 
 // com a implementação da interface 'TaxService',
-// a classe 'BrazilTaxService' passa a se comportar
+// o 'acoplamento forte' anterior é transformado
+// em 'acoplamento fraco'; assim, a classe
+// 'BrazilTaxService' passa a se comportar
 // como uma subclasse da interface 'TaxService',
 // por upcasting, com a inclusão de 'implements'
 // em seu entrypoint:
