@@ -10,12 +10,13 @@ public class RentalService {
     private Double pricePerHour;
     private Double pricePerDay;
 
-    // associações de classe:
-    private BrazilTaxService taxService;
+    // associações de classe; utilizando a interface
+    // para facilitar a escalabilidade do código:
+    private TaxService taxService;
 
     // sem o construtor padrão, para forçar o preenchimento
     // dos argumentos:
-    public RentalService(Double pricePerHour, Double pricePerDay, BrazilTaxService taxService) {
+    public RentalService(Double pricePerHour, Double pricePerDay, TaxService taxService) {
         this.pricePerHour = pricePerHour;
         this.pricePerDay = pricePerDay;
         this.taxService = taxService;
