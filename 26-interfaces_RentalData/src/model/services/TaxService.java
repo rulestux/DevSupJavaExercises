@@ -11,5 +11,9 @@ package model.services;
 // classes que referenciam métodos de classes de tributação:
 public interface TaxService {
 
+    // na interface, já se subentende que os
+    // métodos são públicos e abstratos, não
+    // sendo necessário declará-los como
+    // 'public abstract':
     Double tax(Double amount);
 }
