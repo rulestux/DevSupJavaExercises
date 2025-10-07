@@ -34,9 +34,8 @@ public class Program {
             list.add(new Product(name, price, quantity));
         }
 
-        // criando o diretório de trabalho, incluindo
-        // um 'System.getProperty()' para localizar o
-        // diretório de usuário no Debian:
+        // criando o diretório de trabalho, incluindo 'System.getProperty()'
+        // para o java rastrear diretório de usuário no Debian:
         File dir = new File(System.getProperty("user.home"),"Product_Exercise");
         // efetivando a criação do diretório:
         if (dir.mkdir()) {
@@ -68,8 +67,10 @@ public class Program {
             System.out.println("Writing error: " + e.getMessage());
         }
 
-        // criando novo diretório para o arquivo final:
-        dir = new File(System.getProperty("user.home"),"Product_Exercise/out");
+        // criando novo diretório para o arquivo final e incluindo
+        // 'File.separator' para garantir uma compatibilidade multiplataforma
+        // dos separadores:
+        dir = new File(System.getProperty("user.home"),"Product_Exercise" + File.separator + "out");
         // efetivando a criação do diretório:
         if (dir.mkdir()) {
             System.out.println(dir + " directory created successfully.");
