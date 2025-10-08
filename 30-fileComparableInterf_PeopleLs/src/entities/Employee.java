@@ -1,4 +1,4 @@
-package model.entities;
+package entities;
 
 // para ordenar a lista de instâncias da classe Employee usando o
 // 'Collections.sort', a classe precisa implementar a interface
