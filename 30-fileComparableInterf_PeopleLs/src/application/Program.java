@@ -18,7 +18,7 @@ public class Program {
         // diretório de usuário:
         String homeDir = System.getProperty("user.home");
         // usando 'File.separator' para separadores multiplataforma:
-        String path = homeDir + File.separator + "in.csv";
+        String path = homeDir + File.separator + "CSV_Files" + File.separator + "in.csv";
 
         // início da estrutura try-catch com a instanciação do 'BufferedReader'
         // como parâmetro:

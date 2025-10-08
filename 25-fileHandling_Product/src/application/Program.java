@@ -48,7 +48,7 @@ public class Program {
         // criando o arquivo com a lista original de produtos:
         File file = new File(dir, "Products_List.csv");
         // como parâmetros do 'try', entram as instanciações de:
-        // 'FileWriter' classe cuja função escreve conteúdo em arquivos e
+        // 'FileWriter', classe que escreve conteúdo em arquivos, e
         // 'BufferedWriter', que confere agilidade ao procedimento:
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
             // implementação do 'for each' da lista 'list'
