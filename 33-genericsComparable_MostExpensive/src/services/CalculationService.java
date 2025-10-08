@@ -6,10 +6,11 @@ import java.util.List;
 
     // como a operação da clase 'CalculationService' é static,
     // a classe não será instanciada;
-    // declaração do tipo 'T' como 'Comparable' para que o 'compareTo()' funcione, pois '<T extends Comparable<T>>' significa que
+    // declaração do tipo 'T' como 'Comparable' para que o 'compareTo()'
+    // funcione, pois '<T extends Comparable<? super T>>' significa que
     // esse método pode trabalhar com qualquer tipo 'T', desde que tal seja
     // qualquer subtipo 'Comparable':
-    public static <T extends Comparable<T>> T max(List<T> list) {
+    public static <T extends Comparable<? super T>> T max(List<T> list) {
         if (list.isEmpty()) {
             // teste para verificar se a lista é vazia; o teste um boolean(?):
             throw new IllegalStateException("List can't be empty");

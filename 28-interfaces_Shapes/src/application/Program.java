@@ -22,7 +22,7 @@ public class Program {
         System.out.println("Rectangle area: " + String.format("%.3f", s2.area()));
 
 
-            sc.close();
+    sc.close();
 
 
     }
