@@ -46,9 +46,10 @@ public class Program {
             csvLines.add(lineBuilder.toString());
         }
 
-        // criando o diretório de trabalho, incluindo 'System.getProperty()'
-        // para o java rastrear diretório de usuário no Debian:
-        File dir = new File(System.getProperty("user.home"), "CSV_Files");
+        // criando o diretório de trabalho, incluindo 'System.getProperty()',
+        // para o java rastrear diretório de usuário no Debian ou qualquer
+        // outra plataforma:
+        File dir = new File(System.getProperty("user.home"), "Java_CSV_Files");
         // efetivando e testando a criação do diretório:
         if (dir.mkdir()) {
             System.out.println(dir + " directory created successfully.");
