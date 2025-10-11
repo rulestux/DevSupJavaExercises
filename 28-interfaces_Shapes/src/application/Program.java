@@ -2,10 +2,10 @@ package application;
 
 import java.util.Scanner;
 
-import model.entities.AbstractShape;
-import model.entities.Circle;
-import model.entities.Rectangle;
-import model.enums.Color;
+import entities.AbstractShape;
+import entities.Circle;
+import entities.Rectangle;
+import enums.Color;
 
 public class Program {
 
@@ -21,9 +21,6 @@ public class Program {
         System.out.println("Rectangle color: " + s2.getColor());
         System.out.println("Rectangle area: " + String.format("%.3f", s2.area()));
 
-
     sc.close();
-
-
     }
 }

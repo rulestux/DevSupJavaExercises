@@ -2,8 +2,8 @@ package application;
 
 import java.util.Scanner;
 
-import model.services.InterestService;
-import model.services.UsaInterestService;
+import services.InterestService;
+import services.UsaInterestService;
 
 public class Program {
 

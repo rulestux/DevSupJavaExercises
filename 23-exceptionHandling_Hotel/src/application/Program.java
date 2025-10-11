@@ -4,8 +4,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-import model.entities.Reservation;
-import model.exceptions.DomainException;
+import entities.Reservation;
+import exceptions.DomainException;
 
 public class Program {
 

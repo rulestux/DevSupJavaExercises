@@ -2,8 +2,8 @@ package application;
 
 import java.util.Scanner;
 
-import model.entities.Account;
-import model.exceptions.DomainException;
+import entities.Account;
+import exceptions.DomainException;
 
 public class Program {
 

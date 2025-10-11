@@ -4,10 +4,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-import model.entities.Contract;
-import model.entities.Installment;
-import model.services.ContractService;
-import model.services.PaypalService;
+import entities.Contract;
+import entities.Installment;
+import services.ContractService;
+import services.PaypalService;
 
 public class Program {
 

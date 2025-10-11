@@ -4,10 +4,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-import model.entities.CarRental;
-import model.entities.Vehicle;
-import model.services.BrazilTaxService;
-import model.services.RentalService;
+import entities.CarRental;
+import entities.Vehicle;
+import services.BrazilTaxService;
+import services.RentalService;
 
 public class Program {
 

@@ -1,8 +1,8 @@
 package application;
 
-import model.devices.ComboDevice;
-import model.devices.ConcretePrinter;
-import model.devices.ConcreteScanner;
+import devices.ComboDevice;
+import devices.ConcretePrinter;
+import devices.ConcreteScanner;
 
 public class Program {
 
@@ -22,6 +22,5 @@ public class Program {
         c.processDoc("My dissertation");
         c.print("My dissertation");
         System.out.println("Scan result: " + c.scan());
-
     }
 }
