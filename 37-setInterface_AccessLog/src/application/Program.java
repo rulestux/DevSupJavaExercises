@@ -24,8 +24,6 @@ public class Program {
 
         Scanner sc = new Scanner(System.in);
 
-
-
 //===========================================================================//
         // GERAÇÃO DO ARQUIVO:
         List<String> inputLines = new ArrayList<>();
@@ -38,8 +36,6 @@ public class Program {
 
         // coletando e ordenando os dados para o arquivo:
         for (int i = 1; i <= ln; i++) {
-            // instanciando objeto 'lineBuilder' da classe 'StringBuilder'
-            // para montar as linhas do arquivo:
             System.out.print("Log #" + i + " name: ");
             String nameInput = sc.nextLine();
             System.out.print("Log #" + i + " moment (DD/MM/YYYY HH:MM:SS): ");
