@@ -21,7 +21,7 @@ public class Program {
         //Consumer<Product> cons = p -> p.setPrice(p.getPrice() * 1.1);
         //list.forEach(cons);;
 
-        //EXPRESSÃO LAMBDA 'IN LINE' (sem precisar declara o predicado):
+        // EXPRESSÃO LAMBDA 'IN LINE' (sem precisar declara o predicado):
         list.forEach(p -> p.setPrice(p.getPrice() * 1.1));
 
         list.forEach(System.out::println);
