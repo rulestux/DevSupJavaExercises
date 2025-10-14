@@ -26,17 +26,17 @@ public class Product {
         this.price = price;
     }
 
-    // declaração de método estático, que trabalha com o produto
-    // recebido como argumento:
-    public static boolean staticProductPredicate(Product p) {
-        return p.getPrice() >= 100.0;
+    // declaração de método estático, que trabalha com o
+    // produto recebido como argumento:
+    public static void staticPriceUpdate(Product p) {
+        p.setPrice(p.getPrice() * 1.1);
     }
 
     // declaração de método não estático, que trabalha com o
     // próprio produto da instância, e não com o produto passado
     // como argumento:
-    public boolean nonStaticProductPredicate() {
-        return price >= 100.0;
+    public void nonStaticPriceUpdate() {
+        price = price * 1.1;
     }
 
     @Override
