@@ -1,0 +1,184 @@
+==============================================
+CONDITIONAL STRUCTURES (estruturas condicionais)
+==============================================
+
+
+**********************************************
+OPERATORS
+**********************************************
+______________________________________________
+Comparative Operators:
+
+>		Greater than
+<		Less than
+>=		Greater than or equal to
+<=		Less than or equal to
+==		Equal to
+!=		Not equal to
+______________________________________________
+Logic operators:
+
+&&		AND		// stands between expressions
+||		OR		// stands between expressions
+!		NO		// stands before expressions
+
+
+- Exemple:
+
+x = 5
+
+!(x <= 20 && x == 10)
+^   ^     ^    ^
+|  true	  |	  false
+|		false
+true
+
+
+**********************************************
+CONDITIONAL STRUCTURE SYNTAX
+**********************************************
+______________________________________________
+Simple conditional structure
+
+if ( <condition> ) {
+	<instruction 1>
+	<instruction 2>
+}
+______________________________________________
+Compound conditional structure
+
+if ( <condition> ) {
+	<instruction 1>
+	<instruction 2>
+}
+else {
+	<instruction 3>
+	<instruction 4>
+}
+______________________________________________
+Chaining of conditional structures
+
+if ( <condition 1> ) {
+	<instruction 1>
+	<instruction 2>
+}
+else {
+	if ( <condition 2> ) {
+		<instruction 3>
+		<instruction 4>
+	}
+	else {
+		<instruction 5>
+		<instruction 6>
+	}
+}
+______________________________________________
+Chaining of conditional structures using 'else if'
+
+if ( <condition 1> ) {
+	<instruction 1>
+	<instruction 2>
+}
+else if ( <condition 2> ) {
+	<instruction 3>
+	<instruction 4>
+}
+else if {
+	<instruction 5>
+	<instruction 6>
+}
+else {
+	<instruction 7>
+	<instruction 8>
+}
+
+
+**********************************************
+OPTIONAL SYNTAX
+**********************************************
+______________________________________________
+Compound assignment operators (operadores de atribuição cumulativa)
+
+a += b;		equivale a		a = a + b;
+a -= b;		equivale a		a = a - b;
+a *= b;		equivale a		a = a * b;
+a /= b;		equivale a		a = a / b;
+a %= b;		equivale a		a = a % b;
+______________________________________________
+Switch-case structure
+
+switch (expression) {
+case <value1>:
+	<instruction1>
+	<instruction2>
+	break;
+case <value2>:
+	<instruction3>
+	<instruction4>
+	break;
+default:
+	<instruction5>
+	<instruction6>
+	break;
+}
+
+- Exemple:
+
+if-else structure				switch-case structure
+
+int x = sc.nextInt();			int x = sc.nextInt();
+String day;						String day;
+
+if (x == 1) {					switch (x) {
+day = "sunday";					case 1:
+}									day = "sunday";
+else if (x == 2) {					break;
+day = "monday";					case 2:
+}									day = "monday";
+else if (x == 3) {					break;
+day = "tuesday";				case 3:
+}									day = "tuesday";
+else if (x == 4) {					break;
+day = "wednesday";				case 4:
+}									day = "wednesday"
+else if (x == 5) {					break;
+day = "thursday";				case 5:
+}									day = "thursday"
+else if (x == 6) {					break;
+day = "friday";					case 6:
+}									day = "friday"
+else if (x == 7) {					break;
+day = "saturday";				case 7:
+}									day = "saturday"
+else {								break;
+day = "invalid value";			default:
+}									day = "invalid value"
+									break;
+								}
+
+______________________________________________
+Ternary conditional expression
+
+( <condition> ) ? <value_if_true> : <value_if_false>
+
+
+- Exemples
+
+( 2 > 4 ) ? 50 : 80				// output: 80
+( 10 != 3 ) ? "Maria" : "Alex"	// output: Maria
+
+
+if-else structure					Ternary structure
+
+double price = 34.5;				double price = 34.5;
+double discount;					double discount = (price < 20.0) ? price * 0.1 : price * 0.05;
+
+if (price < 20.0) {
+	discount = price * 0.1;
+}
+else {
+	discount = price * 0.05;
+}
+
+
+

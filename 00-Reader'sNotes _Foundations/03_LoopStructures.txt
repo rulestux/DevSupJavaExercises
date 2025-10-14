@@ -1,0 +1,65 @@
+==============================================
+LOOP STRUCTURES (estruturas repetitivas)
+==============================================
+______________________________________________
+WHILE
+
+while ( <condition> ) {
+	<instruction1>
+	<instruction2>
+}
+
+- while 'condition' is 'true' execute and restart; when false, end.
+
+______________________________________________
+FOR
+
+for ( <init> ; <condition> ; <increment> ) {
+	<instruction1>
+	<instruction2>
+}
+
+- 'init' is executed only in first time;
+- 'condition' if true, execute and restart; if false, end.
+- 'increment' is executed everytime after restart.
+
+- Exemples
+
+- counting:
+
+for (int i=0; i<5; i++) {
+	System.out.println("Value of i: " + i);
+}
+
+			outputs:
+			Value of i: 0
+			Value of i: 1
+			Value of i: 2
+			Value of i: 3
+			Value of i: 4
+
+- countdown:
+
+for (int i=4; i>=0; i--) {
+	System.out.println("Value of i: " + i);
+}
+
+			outputs:
+			Value of i: 4
+			Value of i: 3
+			Value of i: 2
+			Value of i: 1
+			Value of i: 0
+	
+______________________________________________
+DO-WHILE
+
+do {
+	<instruction1>
+	<instruction2>
+} while ( <condition> );
+
+- do-while executa primeiro os comandos e depois testa o resultado, tornando a repetira até a condição se tornar falsa.
+
+
+

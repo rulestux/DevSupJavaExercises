@@ -1,0 +1,106 @@
+==============================================
+OBJECT ORIENTED PROGRAMMING 
+==============================================
+
+
+
+**********************************************
+CONCEPTS
+**********************************************
+______________________________________________
+package: 
+	a namespace that organizes a set of related classes and interfaces; a directory in Java;
+
+______________________________________________	
+class:
+	a blueprint for creating objects, defining properties (attributes) and behaviors (methods);
+	classes are defined within packages and serve as templates for creating objects;
+
+	entity:
+		a representation of a real-world object or concept, often used in databases;	
+		entities can be modeled as classes in programming, encapsulating attributes and behaviors;
+	
+	classes stay in stack of memory.
+______________________________________________	
+attributes:
+	a characteristic or property of an object in object-oriented programming;
+	attributes define the state or data that an object holds and are typically represented as variables within a class;
+______________________________________________
+method (functions):
+	a function defined within a class that specifies an object's behavior;
+	methods are the means by which behaviors are executed on objects, allowing interaction with data;
+______________________________________________	
+behavior:
+	the actions or operations that an object can perform;
+	behaviors are implemented through methods in a class, defining how objects interact and respond.
+	
+______________________________________________	
+class syntax exemple:
+
+			package entities;
+
+			public class MyClass {
+				public double classAttribute1;
+				public double classAttribute2;
+				
+				public double classMethod() {
+					return <operation>
+				}
+			}
+
+______________________________________________
+object:
+	an instance of a class that contains data and methods to manipulate that data;
+	objects are created from classes and represent specific instances of those classes;
+
+	instance:
+		a specific realization of a class, containing actual values for the class's attributes.
+		instances are synonymous with objects; each instance has its own state and behavior based on the class definition.
+
+	objects stay in heap of memory.
+_____________________________________________	
+object syntax exemple:
+			
+			package application;
+
+			import java.util.Scanner;
+			import entities.MyClass;
+			
+			public class Main { 
+			
+				public static void main (String[] args) {
+
+					Scanner sc = new Scanner(System.in);
+
+					// calling the class:
+					MyClass x, y;
+
+					x = new MyClass();
+					y = new MyClass();
+
+					// declaring variables using the class attributes:
+					x.classAttribute1 = sc.nextDouble();
+					x.classAttribute2 = sc.nextDouble();
+
+					y.classAttribute1 = sc.nextDouble();
+					y.classAttribute2 = sc.nextDouble();
+
+					// declaring variables using the class methods:
+					double methodX = x.classMethod();
+					double methodY = y.classMethod();
+
+					sc.close();
+				}
+			}
+_____________________________________________	
+UML diagramm:
+
++-------------------------------+
+|			MyClass				|
++-------------------------------+
+|- classAttribute1 : double		|
+|- classAttribute2 : double		|
++-------------------------------+
+|+ classMethod() : double		|
++-------------------------------+
+

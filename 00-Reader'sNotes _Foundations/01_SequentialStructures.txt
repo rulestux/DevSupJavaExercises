@@ -1,0 +1,96 @@
+==============================================
+SEQUENTIAL STRUCTURES (estruturas sequenciais)
+==============================================
+
+
+**********************************************
+DATA ENTRY
+**********************************************
+______________________________________________
+Scanner:
+
+	import java.utils.Scanner
+
+	Scanner sc = new Scanner(System.in);
+
+- where sc is a variable name that represents an instance of the Scanner class in Java.
+
+to scan:
+text with no spaces:
+
+	String x;
+	x = sc.next();
+
+text until line break:
+
+	String x;
+	x = sc.nextLine();
+
+integer:
+
+	int x;
+	x = sc.nextInt();
+
+floats:
+
+	double x;
+	x = sc.nextDouble();
+
+character:
+
+	char x;
+	x = sc.next().charAt(0);
+
+
+**********************************************
+DATA OUTPUT
+**********************************************
+______________________________________________
+System.out.printf();
+
+%d	Decimal integer										System.out.printf("%d", 42);
+%f	Floating-point number								System.out.printf("%.2f", 3.14159);
+															where '.2f' is the number of decimal places;
+%e	Scientific notation (lowercase)						System.out.printf("%.2e", 12345.678);
+%E	Scientific notation (uppercase)						System.out.printf("%.2E", 12345.678);
+%g	Floating-point number (shortest representation)		System.out.printf("%g", 0.000123);
+%G	Floating-point number (shortest representation, uppercase)	System.out.printf("%G", 0.000123);
+%c	Character											System.out.printf("%c", 'A');
+%s	String												System.out.printf("%s", "Hello");
+%n	Platform-specific newline							System.out.printf("Line 1%nLine 2");
+%b	Boolean												System.out.printf("%b", true);
+%%	Literal percent sign								System.out.printf("100%% complete");
+
+
+**********************************************
+DATA PROCESSING
+**********************************************
+______________________________________________
+Locales:
+
+	import java.util.Locale;
+
+	Locale.setDefault(Locale.forLanguageTag("pt-BR"));
+
+	Locale.setDefault(Locale.US);
+
+
+**********************************************
+MATH FUNCTIONS
+**********************************************
+______________________________________________
+Some Math Functions:
+
+	A = Math.sqrt(x);			// radiciação
+	A = Math.pow(x, y);			// potenciação | x elevado a y
+	A = Math.abs(x);			// absolute value (no negative)
+
+- more information at java.lang.Math
+
+- Exemple: equação do 2º grau:
+
+	delta = Math.pow(b, 2.0) - 4*a*c;
+	x1 = (-b + Math.sqrt(delta)) / (2.0 * a);
+	x2 = (-b - Math.sqrt(delta)) / (2.0 * a);
+
+
