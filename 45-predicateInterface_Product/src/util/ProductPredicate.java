@@ -4,6 +4,7 @@ import java.util.function.Predicate;
 
 import entities.Product;
 
+// implementando a interface PREDICATE:
 public class ProductPredicate implements Predicate<Product> {
 
     @Override
