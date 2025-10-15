@@ -8,7 +8,10 @@ package services;
 // a nova classe implemente -- com uma propagação usando
 // 'implements' no entrypoint -- a interface, dispensando
 // as inúmeras alterações no corpo do código das outras
-// classes que referenciam métodos de classes de tributação:
+// classes que referenciam métodos de classes de tributação;
+// a partir da interface, pode-se fazer injeção de dependência
+// pelo construtor, ao se instanciar objeto da interface
+// numa classe que a implemente.
 public interface TaxService {
 
     // na interface, já se subentende que os

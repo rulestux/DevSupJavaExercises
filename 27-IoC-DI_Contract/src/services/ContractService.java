@@ -7,10 +7,13 @@ import entities.Installment;
 
 public class ContractService {
 
-    // injeção de dependência: associação com a interface
+    // INJEÇÃO DE DEPENDÊNCIA: associação com a interface
     // 'onlinePaymentService':
     private OnlinePaymentService onlinePaymentService;
 
+    // incluindo a instanciação forçada de objeto do
+    // tipo da interface (INJEÇÃO DE DEPENDÊNCIA)
+    // no construtor:
     public ContractService(OnlinePaymentService onlinePaymentService) {
         this.onlinePaymentService = onlinePaymentService;
     }

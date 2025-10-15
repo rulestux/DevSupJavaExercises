@@ -37,6 +37,9 @@ public class Program {
         System.out.print("Enter price per day: $");
         double pricePerDay = sc.nextDouble();
 
+        // INJEÇÃO DE DEPENDÊNCIA: incluindo uma instância de objeto
+        // TaxService específico, conforme previsto pelo construtor da
+        // classe 'RentalService' com a interface:
         RentalService rentalService = new RentalService(pricePerHour, pricePerDay, new BrazilTaxService());
 
         rentalService.processInvoice(cr);
